@@ -16,6 +16,7 @@ Mascota :: Mascota(string c ,string n ,string es, string r ,string s ,string t ,
 } 
 
 void Mascota :: registrarMascota(){
+	
 }
 
 void Mascota :: mostrarMascota(){
