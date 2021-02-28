@@ -5,18 +5,27 @@
 using namespace std;
 #include<string>
 
+//CLASE MASCOTA :: CLASE BASE
 class Mascota
 {
-	protected:
-		string codigo,nombre,especie,sexo,raza,tam;
-		int edad;
-		
+	private:
+		char codigo[5];
+		char nombre[10];
+		char especie[8];
+		char sexo[8];
+		char raza[10];
+		char tam[8];		
 	public:
-		Mascota(string c ,string n ,string es, string r ,string s ,string t ,int e);
-		~Mascota();
+		Mascota();
+		Mascota(char c[],char n[],char es[],char s[],char r[],char t[]);
 		void registrarMascota();
 		void mostrarMascota();
-		void modificarMascota();
+		//void modificarMascota();
+		string getCodigo();
+		string getNombre();
+		string getEspecie();
+		string getSexo();		
 };
+
 
 #endif

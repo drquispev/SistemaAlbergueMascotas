@@ -1,13 +1,21 @@
-#ifndef Albergue_H
-#define Albergue_H
+#ifndef ALBERGUE_H
+#define ALBERGUE_H
 
-#include ""
+#include "Mascota.h"
+#include "Perro.h"
+#include "Gato.h"
 #include<iostream>
 using namespace std;
+//CLASE ALBERGUE
 class Albergue{
 	private:
 		string nombre,direccion,telefono;
 		Mascota *Mascotas[100];
+		Perro *Perros[100];
+		Gato *Gatos[100];
+		int cm;
+		int cp=0;
+		int cg=0;
 	public:
 		Albergue(string n, string d,string t);
 		void agregarMascota();
