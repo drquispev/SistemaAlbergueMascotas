@@ -5,7 +5,8 @@ Albergue :: Albergue(string n, string d,string t){
 	nombre = n;
 	direccion = d;
 	telefono = t;
-	cm = 0;
+	cp = 0;
+	cg = 0;
 }
 
 void Albergue :: agregarMascota(){
@@ -33,7 +34,7 @@ void Albergue :: agregarMascota(){
 				cout<<"Opcion invalida"<<endl;
 			break;
 		}
-	}while(op!=1&&op!=1&&op!=2);
+	}while(op!=0&&op!=1&&op!=2);
 }
 
 void Albergue :: mostrarMascotas(){
@@ -41,13 +42,22 @@ void Albergue :: mostrarMascotas(){
 		cout<<"Lo sentimos no tenemos mascotas en estos momentos."<<endl;
 	}
 	else {
-		cout<<"Las siguientes mascotas: "<<endl;
+		cout<<" Las siguientes mascotas: "<<endl;
+		cout<<"\t";
+	    cout<<left;
+	    cout<<setw(5)<<"Cod. ";
+        cout<<setw(20)<<"Nombre ";
+        cout<<setw(8)<<"Especie ";
+        cout<<setw(10)<<"Raza ";
+        cout<<setw(8)<<"Sexo ";
+        cout<<setw(8)<<"Tamano ";
+        cout<<endl;
 		for(int i=0;i<cp;i++){
 			cout<<"\t";Perros[i]->mostrarPerro();
 			cout<<endl;
 		}
-		for(int i=0;i<cp;i++){
-			cout<<"\t";Gatos[i]->mostrarGato();2
+		for(int i=0;i<cg;i++){
+			cout<<"\t";Gatos[i]->mostrarGato();
 			cout<<endl;
 		}
 	}

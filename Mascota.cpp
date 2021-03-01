@@ -40,7 +40,7 @@ void Mascota :: registrarMascota(){
 
 void Mascota :: mostrarMascota(){
 	cout<<left;
-	cout<<setw(4)<<codigo;
+	cout<<setw(5)<<codigo;
 	cout<<setw(20)<<nombre;
 	cout<<setw(8)<<especie;
 	cout<<setw(10)<<raza;
