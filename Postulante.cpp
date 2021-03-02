@@ -1,8 +1,8 @@
 #include "Postulante.h"
 
 #include<iostream>
-#include<string.h>
 #include<iomanip>
+#include<string.h>
 using namespace std;
 
 Postulante :: Postulante(){

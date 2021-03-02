@@ -1,12 +1,12 @@
-#ifndef Postulante_H
-#define Postulante_H
+#ifndef POSTULANTE_H
+#define POSTULANTE_H
 
 #include<iostream>
-using namespace std;
-#include<string>
 #include<iomanip>
+#include<string.h>
+using namespace std;
 
-//CLASE POSTULANTE
+//CLASE POSTULANTE 
 class Postulante
 {
 	private:
@@ -25,7 +25,9 @@ class Postulante
 		void mostrarPostulante();
 		string getCodigo();
 		int getEdad();
-		
+		string getDireccion();	
+		string getNombres();
+		string getApellidos();
 };
 
 #endif

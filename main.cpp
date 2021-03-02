@@ -2,16 +2,12 @@
 #include<string.h>
 #include<iomanip>
 #include "Mascota.h"
-#include "Mascota.cpp"
 #include "Albergue.h"
-#include "Albergue.cpp"
 #include "Perro.h"
-#include "Perro.cpp"
 #include "Gato.h"
-#include "Gato.cpp"
 #include "Postulante.h"
 #include "Comprobante.h"
-#include "Comprobante.cpp"
+#include"Solicitud.h"
 using namespace std;
 
 
@@ -20,7 +16,6 @@ int main(){
 	int op;
 	Albergue obj("Wuff","Av. San Martin","952625516");
 	Mascota Chamo;
-	Postulante obje;
     Perro chopper("001","Chopper","Perro","Chusco","Macho","Chico");
     do{
     	cout<<"Menu"<<endl;
