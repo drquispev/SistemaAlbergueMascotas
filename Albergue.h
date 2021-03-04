@@ -1,27 +1,32 @@
 #ifndef ALBERGUE_H
 #define ALBERGUE_H
 
-#include "Mascota.h"
-#include "Perro.h"
-#include "Gato.h"
 #include<iostream>
-#include<string.h>
+#include<iomanip>
+#include<windows.h>
+#include<string>
 using namespace std;
-//CLASE ALBERGUE
+//CLASE ALBERGUE actualizar
 class Albergue{
 	private:
 		string nombre,direccion,telefono;
-		Mascota *Mascotas[100];
-		Perro *Perros[100];
-		Gato *Gatos[100];
-		//int cm;
-		int cp = 0;
-		int cg = 0;
+		Mascota Mascotas[100];
+		int aux;
 	public:
 		Albergue(string n, string d,string t);
-		void agregarMascota();
-		void agregarPostulante();
-		void mostrarMascotas();
-		void mostrarPostulantes();	
+		void agregarMascota(int n);
+		//void agregarPostulante();
+		void mostrarMascotas(int n);
+		void mostrarPostulantes();
+	    int ubicarMascota(string dato);
+		Mascota getMascota(int n);
+		int getaux();
+		string getcodM(int n);
+		string getnomM(int n);
+		string getespM(int n);
+		string getsexoM(int n);
+		string getrazaM(int n);
+		string gettamM(int n);	
+		bool buscarMascota(int n,string dato);
 };
 #endif

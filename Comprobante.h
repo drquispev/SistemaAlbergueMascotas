@@ -1,34 +1,38 @@
 #ifndef COMPROBANTE_H
 #define COMPROBANTE_H
 
-#include "Postulante.h"
-#include "Postulante.cpp"
-#include "Mascota.h"
-#include "Perro.h"
-#include "Gato.h"
-#include "Solicitud.h"
 #include<iostream>
-#include<string.h>
+#include<iomanip>
+#include<windows.h>
+#include<string>
 using namespace std;
-//CLASE COMPROBANTE 
+#include "Postulante.h"
+#include "Mascota.h"
+#include "Solicitud.h"
+//CLASE COMPROBANTE
 class Comprobante{
 	private:
 		string codigo;
 		string fecha;
-		float pago;
-		Mascota *mascota;
-		Postulante *postulante;
-	    //Solicitud *solicitud;
-		
+	    Mascota mascota;
+		Postulante postulante;
+		Solicitud solicitud;
+		bool fin;
 	public:
-		//Comprobante();
-		Comprobante(string c,string f,float p);
+		Comprobante();
 		void generarSolicitud();
-		void comprobarSolicitud(Postulante *p);
+		void comprobarSolicitud();
 		void generarComprobante();
 		int seleccionarMascota(Mascota m[],int n,string dato);
 		int seleccionarPostulante(Postulante p[],int n,string dato);
 		Postulante getPostulante(Postulante *p);
 		Mascota getMascota(Mascota *m);
+		string getCodigo();
+		string getFecha();
+		bool getAprobado();
+		string getnombreP();
+		string getcodM();
+		string getcodP();
+		void asignarMascota(Mascota m);	
 };
 #endif

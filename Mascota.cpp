@@ -1,41 +1,37 @@
 #include "Mascota.h"
-#include<iostream>
-
-#include<string>
-#include<iomanip>
-using namespace std;
 
 Mascota :: Mascota(){
-	strcpy(codigo,"MULL");
-	strcpy(nombre,"NULL");
-	strcpy(especie,"NULL");
-	strcpy(sexo,"NULL");
-	strcpy(raza,"NULL");
-	strcpy(tam,"NULL");
+	codigo = "000";
+	nombre = "NULL";
+	especie = "NULL";
+	sexo = "NULL";
+	raza = "NULL";
+	tam = "NULL";	
 }
 
-Mascota :: Mascota(char c[],char n[],char es[],char s[],char r[],char t[]){
+/*Mascota :: Mascota(char c[],char n[],char es[],char s[],char r[],char t[]){
 	strcpy(codigo,c);
 	strcpy(nombre,n);
 	strcpy(especie,es);
 	strcpy(sexo,s);
 	strcpy(raza,r);
 	strcpy(tam,t);
-} 
+}*/ 
 
 void Mascota :: registrarMascota(){ 
+    fflush(stdin);
 	cout<<"Ingrese codigo de la mascota: ";
-	cin.getline(codigo,5,'\n');
+	getline(cin, codigo);
 	cout<<"Ingrese el nombre de la mascota: ";
-	cin.getline(nombre,10,'\n');
+	getline(cin, nombre);
 	cout<<"Ingrese la especie de la mascota (Perro o Gato): ";
-	cin.getline(especie,8,'\n');
+	getline(cin, especie);
 	cout<<"Ingrese la raza de la mascota: ";
-	cin.getline(sexo,8,'\n');
+	getline(cin, sexo);
 	cout<<"Ingrese el sexo de la mascota (Macho/Hembra): ";
-	cin.getline(raza,10,'\n');
+	getline(cin, raza);
 	cout<<"Ingrese el Tamano de la mascota (Chico/Mediano/Grande): ";
-	cin.getline(tam,8,'\n');
+	getline(cin, tam);
 }
 
 void Mascota :: mostrarMascota(){
@@ -49,25 +45,42 @@ void Mascota :: mostrarMascota(){
 }
 
 string Mascota :: getCodigo(){
-    string c;
-	c = codigo;
-	return c;
+	return codigo;
 }
 
 string Mascota :: getNombre(){
-    string n;
-	n = nombre;
-	return n;
+	return nombre;
 }
 
 string Mascota :: getEspecie(){
-    string es;
-	es = especie;
-	return es;
+	return especie;
 }
 
 string Mascota :: getSexo(){
-    string s;
-	s = sexo;
-	return s;
+	return sexo;
+}
+
+string Mascota :: getRaza(){
+	return raza;
+}
+
+string Mascota :: getTam(){
+	return tam;
+}
+
+bool Mascota :: operator==(string dato){
+	if(codigo==dato){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+bool Mascota :: operator=(Mascota obj){
+	codigo = obj.codigo;
+    nombre = obj.nombre;
+	especie = obj.especie;
+    sexo = obj.especie;
+    raza = obj.raza;
+    tam = obj.tam;	
 }

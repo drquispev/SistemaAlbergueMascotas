@@ -33,10 +33,11 @@ bool Solicitud :: comprobarRequisitos(Postulante *p){
 }
 
 void Solicitud :: rellenarSolicitud(){
-	cout<<"REGISTRANDO SOLICITUD: "<<endl;
+	system("CLS");
+	cout<<"\tREGISTRANDO SOLICITUD: "<<endl;
 	cout<<"Ingresar el tipo de inmueble (casa/departamento): ";
 	getline(cin,inmuebleT);
-	cout<<"¿El inmueble es popio? (Si/No)";
+	cout<<"¿El inmueble es popio? (Si/No): ";
 	cin.getline(propio,3,'\n');
 	cout<<"¿Cuenta con algun espacio abierto para la mascota? (Si/No): ";
 	cin.getline(espacio,3,'\n');
@@ -44,6 +45,7 @@ void Solicitud :: rellenarSolicitud(){
 	getline(cin,profesion);
 	cout<<"Ingresar el salario: ";
 	cin>>salario;
+	fflush(stdin);
 	cout<<"Te consideras una persona paciente (Si/No): ";
 	cin.getline(paciente,3,'\n');
 	cout<<"Has tenido problemas por ser agresivo (Si/No): ";
@@ -52,6 +54,7 @@ void Solicitud :: rellenarSolicitud(){
 	cin.getline(activa,3,'\n');
 	cout<<"¿Cuanto tiempo libre tienes al dia? (Horas): ";
 	cin>>horas;
+	fflush(stdin);
 	cout<<"Estarias de acuerdo con esterelizar a tu mascota (Si/No): ";
 	cin.getline(esterilizar,3,'\n');
 }
@@ -113,4 +116,8 @@ void Solicitud :: seAprobo(int resultado){
 
 Postulante Solicitud :: getPostulante(Postulante *p){
 	postulante = p;
+}
+
+bool Solicitud :: getAprobo(){
+	return aprobado;
 }

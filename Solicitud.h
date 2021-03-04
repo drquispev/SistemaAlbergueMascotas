@@ -2,11 +2,12 @@
 #define SOLICITUD_H
 
 #include "Postulante.h"
-#include "Postulante.cpp"
 #include<iostream>
-#include<string.h>
+#include<iomanip>
+#include<windows.h>
+#include<string>
 using namespace std;
-//CLASE SOLICITUD actualizar
+//CLASE SOLICITUD 
 class Solicitud{
 	private:
 		string inmuebleT;
@@ -30,5 +31,6 @@ class Solicitud{
 		int determinarResultado();
 		void seAprobo(int resultado);
 		Postulante getPostulante(Postulante *p);
+		bool getAprobo();
 };
 #endif

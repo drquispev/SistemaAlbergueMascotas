@@ -2,29 +2,34 @@
 #define MASCOTA_H
 
 #include<iostream>
-using namespace std;
+#include<iomanip>
+#include<windows.h>
 #include<string>
+using namespace std;
 
-//CLASE MASCOTA :: CLASE BASE
+//CLASE MASCOTA 
 class Mascota
 {
 	private:
-		char codigo[5];
-		char nombre[10];
-		char especie[8];
-		char sexo[8];
-		char raza[10];
-		char tam[8];		
+		string codigo;
+		string nombre;
+		string especie;
+		string sexo;
+		string raza;
+		string tam;		
 	public:
 		Mascota();
-		Mascota(char c[],char n[],char es[],char s[],char r[],char t[]);
+		//Mascota(char c[],char n[],char es[],char s[],char r[],char t[]);
 		void registrarMascota();
 		void mostrarMascota();
-		//void modificarMascota();
 		string getCodigo();
 		string getNombre();
 		string getEspecie();
-		string getSexo();		
+		string getSexo();	
+		string getRaza();
+		string getTam();
+		bool operator==(string);
+		bool operator=(Mascota);	
 };
 
 

@@ -5,40 +5,17 @@ Albergue :: Albergue(string n, string d,string t){
 	nombre = n;
 	direccion = d;
 	telefono = t;
-	cp = 0;
-	cg = 0;
 }
 
-void Albergue :: agregarMascota(){
+void Albergue :: agregarMascota(int n){
 	int op;
-	do{
-		cout<<"Agregar mascota"<<endl;
-		cout<<"1. Agregar perro"<<endl;
-		cout<<"2. Agregar gato"<<endl;
-		cout<<"0. Salir"<<endl;
-		cout<<"Ingrese una opcion: ";cin>>op;
-		switch(op){
-			case 1:
-				fflush(stdin);
-			    Perros[cp]->registrarPerro();
-	            cp++;	
-			break;
-			case 2:
-			    fflush(stdin);
-				Gatos[cg]->registrarGato();
-	            cg++;
-			break;
-			case 0:
-			break;
-			default:
-				cout<<"Opcion invalida"<<endl;
-			break;
-		}
-	}while(op!=0&&op!=1&&op!=2);
+	cout<<"Agregar mascota"<<endl;
+	fflush(stdin);
+	Mascotas[n].registrarMascota();
 }
 
-void Albergue :: mostrarMascotas(){
-	if(cp == 0 && cg==0){
+void Albergue :: mostrarMascotas(int n){
+	if(n == 0){
 		cout<<"Lo sentimos no tenemos mascotas en estos momentos."<<endl;
 	}
 	else {
@@ -52,13 +29,58 @@ void Albergue :: mostrarMascotas(){
         cout<<setw(8)<<"Sexo ";
         cout<<setw(8)<<"Tamano ";
         cout<<endl;
-		for(int i=0;i<cp;i++){
-			cout<<"\t";Perros[i]->mostrarPerro();
-			cout<<endl;
-		}
-		for(int i=0;i<cg;i++){
-			cout<<"\t";Gatos[i]->mostrarGato();
+		for(int i=0;i<n;i++){
+			cout<<"\t";Mascotas[i].mostrarMascota();
 			cout<<endl;
 		}
 	}
+}
+
+/*int Albergue :: ubicarMascota(string dato){
+	int i = 0;
+	int pos = 0;
+	while(Mascotas[i].getCodigo()!=dato && i<cm){
+		i=i+1;
+		if(i<=cm){
+			pos=i;
+		}
+	}
+	return pos;
+}*/
+
+
+Mascota Albergue :: getMascota(int n){
+	return Mascotas[n];
+}
+
+int Albergue :: getaux(){
+	return aux;
+}
+
+string Albergue :: getcodM(int n){
+	return Mascotas[n].getCodigo();
+}
+
+string Albergue :: getnomM(int n){
+	return Mascotas[n].getNombre();
+}
+
+string Albergue :: getespM(int n){
+	return Mascotas[n].getEspecie();
+}
+
+string Albergue :: getsexoM(int n){
+	return Mascotas[n].getSexo();
+}
+
+string Albergue :: getrazaM(int n){
+	return Mascotas[n].getRaza();
+}
+		
+string Albergue :: gettamM(int n){
+	return Mascotas[n].getTam();
+}
+
+bool Albergue :: buscarMascota(int n,string dato){
+	return Mascotas[n]==dato;
 }

@@ -1,22 +1,17 @@
 #include "Postulante.h"
 
-#include<iostream>
-#include<iomanip>
-#include<string.h>
-using namespace std;
-
 Postulante :: Postulante(){
-	strcpy(codigo,"NULL");
-	strcpy(nombres,"NULL");
-	strcpy(apellidos,"NULL");
-	strcpy(dni,"NULL");
-	strcpy(direccion,"NULL");
-	edad = 0;
-	strcpy(telefono,"NULL");
-	nmascotas = 0;
+	codigo = "NULL";
+    nombres = "NULL";
+    apellidos = "NULL";
+	dni  = "NULL";
+    direccion = "NULL";
+    edad = 0;
+	telefono = "NULL";
+    nmascotas = 0;
 }
 
-Postulante :: Postulante(char c[], char n[], char a[], char d[], char dir[], int e,char t[]){
+/*Postulante :: Postulante(char c[], char n[], char a[], char d[], char dir[], int e,char t[]){
 	strcpy(codigo,c);
 	strcpy(nombres,n);
 	strcpy(apellidos,a);
@@ -24,27 +19,27 @@ Postulante :: Postulante(char c[], char n[], char a[], char d[], char dir[], int
 	strcpy(direccion,dir);
 	edad = e;
 	strcpy(telefono,t);
-	nmascotas = 0;	
-}
+	nmascotas = 0;
+}*/
 
 void Postulante :: registrarPostulante(){
+	cout<<"Registrando Postulante"<<endl;
 	fflush(stdin);
 	cout<<"Ingrese el codigo del postulante: ";
-	cin.getline(codigo,5,'\n');
+	getline(cin,codigo);
 	cout<<"Ingresar nombre(s): ";
-	cin.getline(nombres,20,'\n');
+	getline(cin,nombres);
 	cout<<"Ingresar apellidos: ";
-	cin.getline(apellidos,20,'\n');
+	getline(cin,apellidos);
 	cout<<"Ingresar DNI: ";
-	cin.getline(dni,9,'\n');
+	getline(cin,dni);
 	cout<<"Ingresar direccion: ";
-	cin.getline(direccion,20,'\n');
-	fflush(stdin);
+	getline(cin,direccion);
 	cout<<"Ingresar su edad (anios): ";
 	cin>>edad;
 	fflush(stdin);
 	cout<<"Ingresar telefono: ";
-	cin.getline(telefono,10,'\n');
+	getline(cin,telefono);
 }
 
 void Postulante :: mostrarPostulante(){
@@ -59,11 +54,21 @@ void Postulante :: mostrarPostulante(){
 }
 
 string Postulante :: getCodigo(){
-	string c;
-	c = codigo;
-	return c;
+	return codigo;
 }
 
 int Postulante :: getEdad(){
 	return edad;
+}
+
+string Postulante :: getDireccion(){
+	return direccion;
+}
+
+string Postulante :: getNombres(){
+	return nombres;
+}
+
+string Postulante :: getApellidos(){
+	return apellidos;
 }
