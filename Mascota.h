@@ -29,7 +29,10 @@ class Mascota
 		string getRaza();
 		string getTam();
 		bool operator==(string);
-		bool operator=(Mascota);	
+		bool operator=(Mascota);
+		bool operator>(Mascota);	
+		void extraerMascota();
+		friend istream & operator >> (istream &, Mascota &);
 };
 
 

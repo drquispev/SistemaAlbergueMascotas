@@ -6,7 +6,7 @@
 #include<windows.h>
 #include<string>
 using namespace std;
-//CLASE ALBERGUE actualizar
+//CLASE ALBERGUE  
 class Albergue{
 	private:
 		string nombre,direccion,telefono;
@@ -28,5 +28,7 @@ class Albergue{
 		string getrazaM(int n);
 		string gettamM(int n);	
 		bool buscarMascota(int n,string dato);
+		void extraerMascotas(int n);
+		int compararMascotas(int i,int k,Mascota aux);
 };
 #endif

@@ -84,3 +84,25 @@ bool Mascota :: operator=(Mascota obj){
     raza = obj.raza;
     tam = obj.tam;	
 }
+
+bool Mascota :: operator>(Mascota obj){
+	if(codigo>obj.codigo){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+istream & operator >> (istream &Escritura, Mascota &m){
+	Escritura>>m.codigo>>m.nombre>>m.especie>>m.sexo>>m.raza>>m.tam;	
+}
+
+void Mascota :: extraerMascota(){
+	fstream archivo;
+	archivo.open("listMascotas.txt",ios::in);
+	if(archivo.is_open()){
+		archivo>>codigo>>nombre>>especie>>sexo>>raza>>tam;
+	}
+	archivo.close();
+}

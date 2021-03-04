@@ -15,23 +15,26 @@ using namespace std;
 #include"Solicitud.h"
 #include "Solicitud.cpp"
 //FUNCIÓN PRINCIPAL
+//FUNCIÓN PRINCIPAL actualizar
 int main(){
 	int op;
 	fstream archivo,archivo2;
 	fstream leer,leer2;
-	leer.open("Comprobanteslist.txt",ios::in|ios::app);
-	leer2.open("Mascotaslist.txt",ios::in|ios::app);
+	leer.open("listComprobantes.txt",ios::in|ios::app);
+	leer2.open("listMascotas.txt",ios::in|ios::app);
 	Albergue obj("Wuff","Av. San Martin","952625516");
 	Comprobante comps[100];
 	Solicitud os;
 	int nc = 0,nm = 0;
-	Mascota pop;
+	Mascota fantasma;
 	Postulante obje;
     do{
     	system("CLS");
     	cout<<"\tMenu"<<endl;
     	cout<<"1. Agregar Mascota"<<endl;
-    	cout<<"2. Mostrar mascotas"<<endl;
+    	cout<<"2. extraer mascotas"<<endl;
+    	cout<<"3. Mostrar mascotas"<<endl;
+    	cout<<"4. Ordenar Mascotas"<<endl;
     	cout<<"3. Realizar adopcion"<<endl;
     	cout<<"4. Completar adopcion"<<endl;
     	cout<<"0. Salir"<<endl;
@@ -40,7 +43,7 @@ int main(){
     	switch(op){
     		case  1:
     			//Archivos
-    			archivo2.open("Mascotaslist.txt",ios::out|ios::app);
+    			archivo2.open("listMascotas.txt",ios::out|ios::app);
     			if(archivo2.is_open()){
 		        cout<<"\tAcceso correcto del archivo"<<endl;
                  	cout<<"\nRegistrando Mascota"<<endl;
@@ -52,12 +55,25 @@ int main(){
 	        archivo2.close();
     		break;
     		case 2:
+    			archivo2.open("listMascotas.txt",ios::in|ios::app);
+    			if(archivo2.is_open()){
+		        cout<<"\tAcceso correcto del archivo"<<endl;
+             	for(int i=0;i<nm;i++){
+             		obj.extraerMascotas(i);
+				 }
+             	}
+             	else{
+             		cout<<"ERROR: No se pudo entrar.";
+				 }
+	            archivo2.close();
+    		break;
+    		case 3:
     			cout<<"\n- Lista de mascotas"<<endl<<endl;
     			char buffer[500];
     			
                 cout<<"\t"<<setw(8)<<"Codigo"<<" "<<setw(20)<<"Nombre "<<" "<<setw(8)<<"Especie"<<" ";
                 cout<<setw(10)<<"Raza"<<" "<<setw(8)<<"Tamano"<<" "<<setw(8)<<"Sexo"<<endl;
-   	            archivo2.open("Mascotaslist.txt");
+   	            archivo2.open("listMascotas.txt");
    	            if(!archivo2.good())
               	{
          	       cout<<"Error al abrir el archivo";
@@ -73,8 +89,27 @@ int main(){
             	}
             	archivo2.close();
     		break;
-    		case 3:
-    			    archivo.open("Comprobanteslist.txt",ios::out|ios::app);
+    		case 4:
+    			int k,i,cen;
+    			int x;
+    			x=1;
+            	k=nm;
+            	while(k>1){
+            		k=int(k/2);
+	            	cen=1;
+	            	while(cen==1){
+	            		cen=0;
+	            		i=1;
+	          		    while(i+k<=nm){		
+						  cen=obj.compararMascotas(i,i+k,fantasma);		
+			            i=i+1;
+		            	}
+		            }
+	            	x++;
+            	}
+    		break;
+    		case 5:
+    			    archivo.open("listComprobantes.txt",ios::out|ios::app);
     				if(archivo.is_open()){
     					cout<<"\tAcceso correcto del archivo"<<endl;
     					cout<<" Evaluando requisitos... "<<endl;
@@ -110,7 +145,7 @@ int main(){
     				}
     				archivo.close();
     		break;
-    		case 4:
+    		case 6:
     		break;
     		case 0:
     		break;

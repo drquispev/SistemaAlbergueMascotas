@@ -84,3 +84,21 @@ string Albergue :: gettamM(int n){
 bool Albergue :: buscarMascota(int n,string dato){
 	return Mascotas[n]==dato;
 }
+
+void Albergue :: extraerMascotas(int n){
+	Mascotas[n].extraerMascota();
+}
+
+int Albergue :: compararMascotas(int i,int k,Mascota aux){
+	int cen;
+	if(Mascotas[i]>Mascotas[k]){
+		aux=Mascotas[i];
+		Mascotas[i]=Mascotas[k];
+		Mascotas[k]=aux;
+		cen = 1;
+		return cen;
+	}
+	else{
+		return 0;
+	}
+}
